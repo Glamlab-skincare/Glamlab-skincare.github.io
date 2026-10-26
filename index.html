@@ -553,7 +553,7 @@ if (!window.storage) {
  };
 }
 
-var GLAMLAB_API_URL = "https://script.google.com/macros/s/AKfycbyEyV1StmlQB5YtDhKsX6xiYcUQuz_PBiwLLoakDECU0QiCmLa1-SvJdeqPwy5VhU4/exec";
+var GLAMLAB_API_URL = "https:" + String.fromCharCode(47, 47) + "script.google.com/macros/s/AKfycbyEyV1StmlQB5YtDhKsX6xiYcUQuz_PBiwLLoakDECU0QiCmLa1-SvJdeqPwy5VhU4/exec";
 
 function apiCallHttp_(envelope) {
  return fetch(GLAMLAB_API_URL, {
