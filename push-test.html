@@ -149,7 +149,8 @@ $('bOn').onclick = async () => {
 $('bTest').onclick = async () => {
   try {
     if (!sub) return;
-    await call('test', { endpoint: sub.endpoint });
+    const k = sub.toJSON().keys || {};
+    await call('test', { endpoint: sub.endpoint, auth: k.auth });
     log('✔ נשלח. עכשיו לסגור את האפליקציה (או לנעול את המסך). ההתראה אמורה להגיע בעוד כ-10 שניות.');
   } catch (e) { log('שגיאה: ' + e.message); }
 };
@@ -157,7 +158,8 @@ $('bTest').onclick = async () => {
 $('bOff').onclick = async () => {
   try {
     if (!sub) return;
-    await call('unsubscribe', { endpoint: sub.endpoint });
+    const k = sub.toJSON().keys || {};
+    await call('unsubscribe', { endpoint: sub.endpoint, auth: k.auth });
     await sub.unsubscribe();
     sub = null;
     log('✔ המנוי נמחק מהשרת ומהטלפון.');
