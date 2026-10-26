@@ -850,7 +850,7 @@ document.getElementById("toggleSpfNotif").addEventListener("change", async e => 
  showToast(notifState.spf ? "✅ הטיימר יוצג בדף הבית" : "🔕 הטיימר כובה");
 });
 
-const REMIND_FN = "https://cfqessiozwysxhkznssj.supabase.co/functions/v1/push-api";
+const REMIND_FN = URL_SCHEME + "cfqessiozwysxhkznssj.supabase.co/functions/v1/push-api";
 
 let remindState = null, remindBusy = false, remindResynced = false, remindTimesLoaded = false;
 
