@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>GlamLab · ניסוי התראות</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#6E1A3A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ניסוי התראות">
+<link rel="manifest" href="push-test.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{ --bordo:#6E1A3A; --magenta:#D6409F; --bg:#FBEAEA; --card:#fff; --ink:#3a1424; --muted:#7a5a66; --ok:#1f7a4d; --bad:#b3261e; }
+  *{ box-sizing:border-box }
+  body{ margin:0; font-family:Heebo,system-ui,sans-serif; background:var(--bg); color:var(--ink); padding:20px 16px 40px; }
+  h1{ color:var(--bordo); font-size:1.4rem; margin:4px 0 2px }
+  .sub{ color:var(--muted); margin:0 0 16px; font-size:.95rem }
+  .card{ background:var(--card); border-radius:20px; padding:16px; margin-bottom:14px; box-shadow:0 2px 10px rgba(110,26,58,.08) }
+  .card h2{ font-size:1.05rem; margin:0 0 8px; color:var(--bordo) }
+  .row{ display:flex; justify-content:space-between; gap:8px; padding:6px 0; border-bottom:1px solid #f3e3e8; font-size:.95rem }
+  .row:last-child{ border:0 }
+  .v{ font-weight:600 } .v.ok{ color:var(--ok) } .v.bad{ color:var(--bad) }
+  button{ font:inherit; font-weight:600; border:0; border-radius:999px; padding:12px 18px; width:100%; margin-top:8px; cursor:pointer; background:var(--magenta); color:#fff }
+  button.sec{ background:#fff; color:var(--bordo); border:2px solid var(--bordo) }
+  button:disabled{ opacity:.45 }
+  #log{ font-size:.9rem; line-height:1.6; white-space:pre-wrap; min-height:1.5em }
+  ol{ padding-inline-start:20px; margin:6px 0 0; line-height:1.7 }
+  @media (prefers-reduced-motion: reduce){ *{ transition:none!important; animation:none!important } }
+</style>
+</head>
+<body>
+<h1>ניסוי התראות</h1>
+<p class="sub">דף בדיקה פנימי של GlamLab · שלב 2א. לא חלק מהאפליקציה.</p>
+
+<div class="card">
+  <h2>מצב המכשיר</h2>
+  <div class="row"><span>Service Worker</span><span class="v" id="sSw">…</span></div>
+  <div class="row"><span>תמיכה בהתראות</span><span class="v" id="sPush">…</span></div>
+  <div class="row"><span>פתוח כאפליקציה (ממסך הבית)</span><span class="v" id="sStand">…</span></div>
+  <div class="row"><span>הרשאה</span><span class="v" id="sPerm">…</span></div>
+  <div class="row"><span>מנוי שמור</span><span class="v" id="sSub">…</span></div>
+  <div class="row"><span>שם להתראה (מהטלפון בלבד)</span><span class="v" id="sName">…</span></div>
+</div>
+
+<div class="card">
+  <h2>שלבים</h2>
+  <button id="bOn">1 · הפעלת התראות</button>
+  <button id="bTest" disabled>2 · שליחת התראת ניסוי בעוד 10 שניות</button>
+  <button id="bOff" class="sec" disabled>ביטול ומחיקת המנוי מהשרת</button>
+  <p id="log"></p>
+</div>
+
+<div class="card" id="ios" hidden>
+  <h2>באייפון</h2>
+  <ol>
+    <li>בספארי: כפתור השיתוף ← "הוספה למסך הבית".</li>
+    <li>לפתוח את "ניסוי התראות" מהאייקון החדש.</li>
+    <li>שם ללחוץ על שלב 1.</li>
+  </ol>
+</div>
+
+<script>
+const FN = 'https://cfqessiozwysxhkznssj.supabase.co/functions/v1/push-api';
+const $ = (id) => document.getElementById(id);
+const set = (id, txt, cls) => { const el = $(id); el.textContent = txt; el.className = 'v' + (cls ? ' ' + cls : ''); };
+const log = (t) => { $('log').textContent = t; };
+
+async function call(action, payload) {
+  const r = await fetch(FN, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+                              body: JSON.stringify({ action, payload: payload || {} }) });
+  let j = null; try { j = await r.json(); } catch (e) {}
+  if (!j || !j.ok) throw new Error((j && j.error) || ('http_' + r.status));
+  return j.data;
+}
+
+function b64ToBytes(s) {
+  const pad = s.replace(/-/g, '+').replace(/_/g, '/') + '==='.slice((s.length + 3) % 4);
+  return Uint8Array.from(atob(pad), (c) => c.charCodeAt(0));
+}
+
+// השם והלשון עוברים מהפרופיל השמור בטלפון אל IndexedDB, כדי שה-Service Worker יוכל לקרוא אותם.
+// ⚠️ לא נשלחים לשום שרת.
+function readProfile() {
+  try { const p = JSON.parse(localStorage.getItem('glamlab_profile') || 'null'); return p || null; } catch (e) { return null; }
+}
+function saveWho(who) {
+  return new Promise((resolve) => {
+    try {
+      const open = indexedDB.open('glamlab-sw', 1);
+      open.onupgradeneeded = () => open.result.createObjectStore('kv');
+      open.onerror = () => resolve(false);
+      open.onsuccess = () => {
+        const tx = open.result.transaction('kv', 'readwrite');
+        tx.objectStore('kv').put(who, 'who');
+        tx.oncomplete = () => resolve(true); tx.onerror = () => resolve(false);
+      };
+    } catch (e) { resolve(false); }
+  });
+}
+
+let reg = null, sub = null;
+
+async function refresh() {
+  const hasSw = 'serviceWorker' in navigator;
+  const hasPush = hasSw && 'PushManager' in window && 'Notification' in window;
+  const standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  const isIOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  set('sSw', hasSw ? 'קיים' : 'לא נתמך', hasSw ? 'ok' : 'bad');
+  set('sPush', hasPush ? 'כן' : 'לא', hasPush ? 'ok' : 'bad');
+  set('sStand', standalone ? 'כן' : 'לא', standalone ? 'ok' : (isIOS ? 'bad' : ''));
+  $('ios').hidden = !(isIOS && !standalone);
+  set('sPerm', hasPush ? ({ granted: 'אושרה', denied: 'נחסמה', default: 'טרם התבקשה' }[Notification.permission]) : '—',
+      hasPush && Notification.permission === 'granted' ? 'ok' : (hasPush && Notification.permission === 'denied' ? 'bad' : ''));
+  const p = readProfile();
+  set('sName', p && p.name ? p.name : 'אין (ההתראה תהיה בלי שם)');
+  if (hasSw) {
+    reg = await navigator.serviceWorker.register('./sw.js');
+    await navigator.serviceWorker.ready;
+    sub = hasPush ? await reg.pushManager.getSubscription() : null;
+  }
+  set('sSub', sub ? 'כן' : 'לא', sub ? 'ok' : '');
+  $('bOn').disabled = !hasPush;
+  $('bTest').disabled = !sub;
+  $('bOff').disabled = !sub;
+}
+
+$('bOn').onclick = async () => {
+  try {
+    log('מבקשת הרשאה…');
+    const perm = await Notification.requestPermission();
+    if (perm !== 'granted') { log('ההרשאה לא אושרה. אפשר לשנות בהגדרות הטלפון.'); return refresh(); }
+    const p = readProfile();
+    await saveWho({ name: p && p.name ? String(p.name) : '', gender: p && p.gender ? String(p.gender) : '' });
+    log('מקבלת מפתח ציבורי…');
+    const { publicKey } = await call('vapid');
+    reg = await navigator.serviceWorker.ready;
+    sub = await reg.pushManager.getSubscription();
+    if (!sub) sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64ToBytes(publicKey) });
+    const j = sub.toJSON();
+    await call('subscribe', { endpoint: j.endpoint, keys: j.keys });
+    log('✔ המנוי נשמר בשרת. עכשיו שלב 2.');
+  } catch (e) { log('שגיאה: ' + e.message); }
+  refresh();
+};
+
+$('bTest').onclick = async () => {
+  try {
+    if (!sub) return;
+    await call('test', { endpoint: sub.endpoint });
+    log('✔ נשלח. עכשיו לסגור את האפליקציה (או לנעול את המסך). ההתראה אמורה להגיע בעוד כ-10 שניות.');
+  } catch (e) { log('שגיאה: ' + e.message); }
+};
+
+$('bOff').onclick = async () => {
+  try {
+    if (!sub) return;
+    await call('unsubscribe', { endpoint: sub.endpoint });
+    await sub.unsubscribe();
+    sub = null;
+    log('✔ המנוי נמחק מהשרת ומהטלפון.');
+  } catch (e) { log('שגיאה: ' + e.message); }
+  refresh();
+};
+
+refresh().catch((e) => log('שגיאה: ' + e.message));
+</script>
+</body>
+</html>
