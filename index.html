@@ -91,7 +91,7 @@
       <input type="email" id="authEmailInput" class="onboarding-input" placeholder="example@email.com">
       <button type="button" class="btn-primary anim-generate-btn mt-3" id="authEmailConfirmBtn">המשך</button>
     </div>
-    <p class="auth-caption">נשלח אלייך קוד למייל — בלי סיסמה. כך תוכלי לחזור לשגרה שלך גם מטלפון אחר.</p>
+    <p class="auth-caption">נשלח קוד למייל — בלי סיסמה. כך אפשר לחזור לשגרה גם מטלפון אחר.</p>
     <button type="button" class="auth-guest-link" id="authGuestBtn">המשך כאורח/ת 👤</button>
     <p class="legal-foot"><button type="button" class="legal-link" data-legal="privacy">פרטיות</button> · <button type="button" class="legal-link" data-legal="terms">תנאי שימוש</button> · <button type="button" class="legal-link" data-legal="access">נגישות</button> · <button type="button" class="legal-link" data-legal="about">מי אנחנו</button></p>
   </div>
@@ -141,7 +141,7 @@
     
     <div class="onboarding-step" id="onbStep-4">
       <h2 class="onboarding-title">איך העור שלך מגיב?</h2>
-      <p class="onboarding-subtitle">סמני מה שמתאים</p>
+      <p class="onboarding-subtitle"><span data-gv-f="סמני מה שמתאים" data-gv-m="סמן מה שמתאים" data-gv-n="אפשר לסמן כמה">אפשר לסמן כמה</span></p>
       <div class="flex flex-wrap gap-2 justify-center" id="onbSensitivityGroup"></div>
     </div>
 
@@ -198,7 +198,7 @@
         <div class="flex flex-wrap gap-2 mb-4" id="profileSkinTypeGroup"></div>
         <div class="profile-sublabel">מטרות</div>
         <div class="flex flex-wrap gap-2" id="profileGoalGroup"></div>
-        <button type="button" class="profile-save-btn" id="profileSaveBtn">שמרי שינויים ✨</button>
+        <button type="button" class="profile-save-btn" id="profileSaveBtn"><span data-gv-f="שמרי שינויים ✨" data-gv-m="שמור שינויים ✨" data-gv-n="שמירת שינויים ✨">שמירת שינויים ✨</span></button>
       </div>
     </div>
     <div class="profile-section">
@@ -317,30 +317,30 @@
   </section>
 
   <section class="panel" id="panel-optimize">
-    <p class="text-sm mb-4" style="color:var(--ink-soft)">צלמי את רשימת הרכיבים של המוצרים שיש לך בבית, ונבנה מהם את השגרה שלך.</p>
+    <p class="text-sm mb-4" style="color:var(--ink-soft)"><span data-gv-f="צלמי את רשימת הרכיבים של המוצרים שיש לך בבית, ונבנה מהם את השגרה שלך." data-gv-m="צלם את רשימת הרכיבים של המוצרים שיש לך בבית, ונבנה מהם את השגרה שלך." data-gv-n="אפשר לצלם את רשימת הרכיבים של המוצרים בבית, ונבנה מהם את השגרה.">אפשר לצלם את רשימת הרכיבים של המוצרים בבית, ונבנה מהם את השגרה.</span></p>
     <div class="flex gap-2 mb-4" style="display:flex;gap:.5rem">
-      <button type="button" class="scan-btn flex items-center justify-center gap-2" style="flex:1" id="goScanFromOptBtn">📷 צלמי עכשיו</button>
+      <button type="button" class="scan-btn flex items-center justify-center gap-2" style="flex:1" id="goScanFromOptBtn">📷 <span data-gv-f="צלמי עכשיו" data-gv-m="צלם עכשיו" data-gv-n="צילום עכשיו">צילום עכשיו</span></button>
       <button type="button" class="scan-btn flex items-center justify-center gap-2" style="flex:1" id="goGalleryFromOptBtn">🖼️ מהגלריה</button>
     </div>
     <div id="scannedList"></div>
     <div class="flex flex-col gap-3 mb-5" id="ingredientList"></div>
     <button class="btn-primary anim-generate-btn" id="buildRoutineBtn"><span class="anim-letter" style="animation-delay:0s">ב</span><span class="anim-letter" style="animation-delay:.05s">נ</span><span class="anim-letter" style="animation-delay:.1s">ו</span><span class="anim-letter" style="animation-delay:.15s">&nbsp;</span><span class="anim-letter" style="animation-delay:.2s">ל</span><span class="anim-letter" style="animation-delay:.25s">י</span><span class="anim-letter" style="animation-delay:.3s">&nbsp;</span><span class="anim-letter" style="animation-delay:.35s">ש</span><span class="anim-letter" style="animation-delay:.4s">ג</span><span class="anim-letter" style="animation-delay:.45s">ר</span><span class="anim-letter" style="animation-delay:.5s">ה</span><svg class="anim-generate-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"/></svg></button>
-    <div class="mt-6" id="routineResult"><div class="empty-hint">אחרי שתסרקי מוצר ותוסיפי אותו, לוח השגרה יופיע כאן.</div></div>
+    <div class="mt-6" id="routineResult"><div class="empty-hint"><span data-gv-f="אחרי שתסרקי מוצר ותוסיפי אותו, לוח השגרה יופיע כאן." data-gv-m="אחרי שתסרוק מוצר ותוסיף אותו, לוח השגרה יופיע כאן." data-gv-n="אחרי סריקה והוספה של מוצר, לוח השגרה יופיע כאן.">אחרי סריקה והוספה של מוצר, לוח השגרה יופיע כאן.</span></div></div>
   </section>
 
   <section class="panel" id="panel-scan">
-    <p class="text-sm mb-2" style="color:var(--ink-soft)">סרקי מוצר ו-GlamLab תנתח התאמה לעור שלך ותזהה התנגשויות עם השגרה הקיימת.</p>
+    <p class="text-sm mb-2" style="color:var(--ink-soft)"><span data-gv-f="סרקי מוצר ו-GlamLab תנתח התאמה לעור שלך ותזהה התנגשויות עם השגרה הקיימת." data-gv-m="סרוק מוצר ו-GlamLab תנתח התאמה לעור שלך ותזהה התנגשויות עם השגרה הקיימת." data-gv-n="סריקת מוצר: GlamLab תנתח התאמה לעור ותזהה התנגשויות עם השגרה הקיימת.">סריקת מוצר: GlamLab תנתח התאמה לעור ותזהה התנגשויות עם השגרה הקיימת.</span></p>
     
-    <p class="text-xs mb-5" style="color:var(--ink-soft);line-height:1.6">📷 צלמי <b>רק את רשימת הרכיבים</b> — בלי פנים, ידיים או רקע. התמונה נשלחת לזיהוי בשירות של Google, שעשוי להשתמש בה לשיפור שירותיו. <b>אצלנו היא לא נשמרת.</b></p>
+    <p class="text-xs mb-5" style="color:var(--ink-soft);line-height:1.6">📷 <span data-gv-f="צלמי" data-gv-m="צלם" data-gv-n="לצלם">לצלם</span> <b>רק את רשימת הרכיבים</b> — בלי פנים, ידיים או רקע. התמונה נשלחת לזיהוי בשירות של Google, שעשוי להשתמש בה לשיפור שירותיו. <b>אצלנו היא לא נשמרת.</b></p>
     <div class="flex flex-col gap-3 mb-5">
       <button type="button" class="scan-btn flex items-center justify-center gap-2" id="scanPhotoBtn">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="color:var(--crimson-dark)"><path d="M4 8a2 2 0 0 1 2-2h1.2l.9-1.5A2 2 0 0 1 9.83 3.5h4.34a2 2 0 0 1 1.73 1L16.8 6H18a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.3" stroke="currentColor" stroke-width="1.7"/></svg>
-        צלמי את רשימת הרכיבים
+        <span data-gv-f="צלמי את רשימת הרכיבים" data-gv-m="צלם את רשימת הרכיבים" data-gv-n="צילום רשימת הרכיבים">צילום רשימת הרכיבים</span>
       </button>
       <input type="file" id="labelFileInput" accept="image/*" hidden>
       
       <input type="file" id="labelCameraInput" accept="image/*" capture="environment" hidden>
-      <button type="button" class="scan-btn flex items-center justify-center gap-2" id="scanGalleryBtn">🖼️ או בחרי תמונה מהגלריה</button>
+      <button type="button" class="scan-btn flex items-center justify-center gap-2" id="scanGalleryBtn">🖼️ <span data-gv-f="או בחרי תמונה מהגלריה" data-gv-m="או בחר תמונה מהגלריה" data-gv-n="או תמונה מהגלריה">או תמונה מהגלריה</span></button>
       
       <button type="button" class="scan-btn flex items-center justify-center gap-2" id="frontPhotoBtn" style="border-style:dashed;font-size:.85rem;color:var(--ink-soft)">📸 רוצה שנזהה גם את שם המוצר? אפשר לצלם קודם את החזית (רשות)</button>
       <input type="file" id="frontInput" accept="image/*" hidden>
@@ -354,19 +354,19 @@
       
       <div id="pastePanel" hidden>
         <textarea id="pasteInput" class="onboarding-input" rows="5" maxlength="4000" dir="ltr" style="text-align:left;font-size:.85rem;line-height:1.5" placeholder="Water, Glycerin, Niacinamide, ..."></textarea>
-        <p class="text-xs mt-2" style="color:var(--ink-soft);line-height:1.6">הדביקי את רשימת הרכיבים מהתווית או מעמוד המוצר, מופרדים בפסיקים. הטקסט לא נשלח לבינה מלאכותית, ולא נשמר אצלנו.</p>
-        <button type="button" class="btn-primary mt-2" id="pasteGoBtn">בדקי את הרכיבים</button>
+        <p class="text-xs mt-2" style="color:var(--ink-soft);line-height:1.6"><span data-gv-f="הדביקי" data-gv-m="הדבק" data-gv-n="אפשר להדביק">אפשר להדביק</span> את רשימת הרכיבים מהתווית או מעמוד המוצר, מופרדים בפסיקים. הטקסט לא נשלח לבינה מלאכותית, ולא נשמר אצלנו.</p>
+        <button type="button" class="btn-primary mt-2" id="pasteGoBtn"><span data-gv-f="בדקי את הרכיבים" data-gv-m="בדוק את הרכיבים" data-gv-n="בדיקת הרכיבים">בדיקת הרכיבים</span></button>
       </div>
     </div>
     
     <div class="rec-card mb-5" id="askCard">
-      <div class="products-heading" style="margin-top:0">💬 שאלי אותנו</div>
+      <div class="products-heading" style="margin-top:0">💬 <span data-gv-f="שאלי אותנו" data-gv-m="שאל אותנו" data-gv-n="יש שאלה?">יש שאלה?</span></div>
       <p class="rec-reason">שם של רכיב, או שני רכיבים כדי לבדוק אם אפשר לשלב ביניהם. אפשר בעברית או באנגלית.</p>
       <datalist id="askNames"></datalist>
       <div class="ex-label">מה זה?</div>
       <div style="display:flex;gap:.5rem">
         <input type="text" id="askQ" list="askNames" class="onboarding-input" style="flex:1;font-size:.9rem;padding:.6rem .8rem" maxlength="100" placeholder="למשל: חומצה אזלאית">
-        <button type="button" class="pill-btn" id="askQBtn">שאלי</button>
+        <button type="button" class="pill-btn" id="askQBtn"><span data-gv-f="שאלי" data-gv-m="שאל" data-gv-n="לשאול">לשאול</span></button>
       </div>
       <div id="askResult" class="mt-3" aria-live="polite"></div>
       
@@ -453,8 +453,8 @@
     <div id="accStepEmail">
       <label for="accEmail" class="modal-tip">המייל שלך — Gmail או כל מייל אחר</label>
       <input type="email" id="accEmail" class="onboarding-input mt-2" autocomplete="email" inputmode="email" dir="ltr">
-      <button type="button" class="btn-primary mt-3" style="width:100%" id="accSendBtn">שלחי לי קוד</button>
-      <p class="modal-tip mt-2" style="font-size:.75rem;color:var(--ink-soft)">נשלח אלייך קוד בן 6 ספרות. אין סיסמה, והמייל עצמו לא נשמר אצלנו.</p>
+      <button type="button" class="btn-primary mt-3" style="width:100%" id="accSendBtn">שליחת קוד</button>
+      <p class="modal-tip mt-2" style="font-size:.75rem;color:var(--ink-soft)">נשלח קוד בן 6 ספרות למייל. אין סיסמה, והמייל עצמו לא נשמר אצלנו.</p>
     </div>
     <div id="accStepCode" hidden>
       <p class="modal-tip">שלחנו קוד אל <bdi id="accSentTo" dir="ltr"></bdi></p>
@@ -506,7 +506,7 @@
     <p class="modal-tip">👂 <b>2.</b> אם אין גירוי — לחזור על זה <b>מתחת לאוזן</b>, ושוב להמתין.</p>
     <p class="modal-tip">✅ <b>3.</b> אין גירוי בשני השלבים? אפשר להתחיל להשתמש בפנים.</p>
     <p class="modal-tip">⛔ <b>יש גירוי בשלב כלשהו?</b> לא להשתמש. לפנות לייעוץ רפואי או לשירות הלקוחות.</p>
-    <p class="modal-tip">🧪 <b>ועוד דבר:</b> מוצר אחד בכל פעם. אם תתחילי כמה ביחד ותהיה תגובה — לא תדעי מי גרם לה.</p>
+    <p class="modal-tip">🧪 <b>ועוד דבר:</b> מוצר אחד בכל פעם. <span data-gv-f="אם תתחילי כמה ביחד ותהיה תגובה — לא תדעי מי גרם לה." data-gv-m="אם תתחיל כמה ביחד ותהיה תגובה — לא תדע מי גרם לה." data-gv-n="כשמתחילים כמה ביחד ויש תגובה — אי אפשר לדעת מי גרם לה.">כשמתחילים כמה ביחד ויש תגובה — אי אפשר לדעת מי גרם לה.</span></p>
     <p class="modal-foot">⚠️ הבדיקה מעלה מאוד את הסיכוי לתפוס גירוי מראש, אבל אינה נותנת ודאות — גם אחריה ייתכן גירוי.</p>
   </div>
 </div>
@@ -522,11 +522,34 @@
     <p class="modal-tip">🍂 <b>יבש:</b> מתיחות וחוסר ברק גם שעות אחרי הניקוי.</p>
     <p class="modal-tip">🌗 <b>מעורב:</b> ברק רק באזור ה-T, לחיים יבשות.</p>
     <p class="modal-tip">🌸 <b>רגיש:</b> נטייה לאדמומיות וגירוי ממוצרים חדשים.</p>
-    <p class="modal-foot">טיפ: נקי פנים, אל תמרחי כלום 30 דקות ואז תסתכלי במראה.</p>
+    <p class="modal-foot"><span data-gv-f="טיפ: נקי פנים, אל תמרחי כלום 30 דקות ואז תסתכלי במראה." data-gv-m="טיפ: נקה פנים, אל תמרח כלום 30 דקות ואז תסתכל במראה." data-gv-n="טיפ: לנקות פנים, לא למרוח כלום 30 דקות, ואז להסתכל במראה.">טיפ: לנקות פנים, לא למרוח כלום 30 דקות, ואז להסתכל במראה.</span></p>
   </div>
 </div>
 
 <script>const wait = ms => new Promise(r => setTimeout(r, ms));
+
+function gv(f, m, n) {
+ var g = typeof selectedGender !== "undefined" ? selectedGender : null;
+ return g === "female" ? f : g === "male" ? m : n;
+}
+
+function applyVoice() {
+ try {
+  var k = typeof selectedGender !== "undefined" && selectedGender === "female" ? "f" : typeof selectedGender !== "undefined" && selectedGender === "male" ? "m" : "n";
+  document.querySelectorAll("[data-gv-" + k + "]").forEach(function(el) {
+   el.textContent = el.getAttribute("data-gv-" + k);
+  });
+  var ex = document.getElementById("onbExperienceGroup");
+  if (ex && typeof EXPERIENCE_OPTIONS !== "undefined") {
+   ex.innerHTML = "";
+   renderSingleSelectInto(ex, EXPERIENCE_OPTIONS, function(key) {
+    userExperience = key;
+   }, userExperience, autoAdvanceOnboarding);
+  }
+  var hg = document.getElementById("onbHealthGroup");
+  if (hg && typeof renderHealthSelectInto === "function") renderHealthSelectInto(hg);
+ } catch (e) {}
+}
 
 if (!window.storage) {
  window.storage = {
@@ -1788,7 +1811,7 @@ function renderProductsSection(ingredients, reasonsMap, placement, explain) {
 }
 
 function beforeYouStartHTML() {
- return '<div class="rec-card" style="border-right:3px solid var(--crimson);margin-top:1.5rem">' + '<div class="products-heading" style="margin-top:0">לפני שמתחילים — שני דברים</div>' + '<p class="rec-reason"><b>1 · מוצר אחד בכל פעם.</b> ' + "אם תתחילי כמה תכשירים חדשים ביחד ותהיה תגובה — לא תדעי איזה מהם גרם לה. " + "כדאי להוסיף תכשיר אחד, לתת לו כמה ימים, ורק אז את הבא.</p>" + '<p class="rec-reason"><b>2 · פאצ׳ טסט לפני תכשיר חדש.</b> ' + "מעט מהתכשיר על העור מתחת לכף היד, ולהמתין רבע שעה עד שעה. " + "אם אין גירוי — לחזור על זה מתחת לאוזן, ושוב להמתין. " + "אם יש גירוי בשלב כלשהו — לא להשתמש, ולפנות לייעוץ רפואי או לחברה.</p>" + '<p class="rec-reason" style="opacity:.8">⚠️ הבדיקה מעלה מאוד את הסיכוי לתפוס גירוי מראש, ' + "אבל היא אינה נותנת ודאות — גם אחריה ייתכן גירוי.</p>" + (SHOW_SOURCES ? '<p class="rec-reason" style="opacity:.7;font-size:.78rem">מקור: דקל ורד כץ</p>' : "") + "</div>";
+ return '<div class="rec-card" style="border-right:3px solid var(--crimson);margin-top:1.5rem">' + '<div class="products-heading" style="margin-top:0">לפני שמתחילים — שני דברים</div>' + '<p class="rec-reason"><b>1 · מוצר אחד בכל פעם.</b> ' + gv("אם תתחילי כמה תכשירים חדשים ביחד ותהיה תגובה — לא תדעי איזה מהם גרם לה. ", "אם תתחיל כמה תכשירים חדשים ביחד ותהיה תגובה — לא תדע איזה מהם גרם לה. ", "כשמתחילים כמה תכשירים חדשים ביחד ויש תגובה — אי אפשר לדעת איזה מהם גרם לה. ") + "כדאי להוסיף תכשיר אחד, לתת לו כמה ימים, ורק אז את הבא.</p>" + '<p class="rec-reason"><b>2 · פאצ׳ טסט לפני תכשיר חדש.</b> ' + "מעט מהתכשיר על העור מתחת לכף היד, ולהמתין רבע שעה עד שעה. " + "אם אין גירוי — לחזור על זה מתחת לאוזן, ושוב להמתין. " + "אם יש גירוי בשלב כלשהו — לא להשתמש, ולפנות לייעוץ רפואי או לחברה.</p>" + '<p class="rec-reason" style="opacity:.8">⚠️ הבדיקה מעלה מאוד את הסיכוי לתפוס גירוי מראש, ' + "אבל היא אינה נותנת ודאות — גם אחריה ייתכן גירוי.</p>" + (SHOW_SOURCES ? '<p class="rec-reason" style="opacity:.7;font-size:.78rem">מקור: דקל ורד כץ</p>' : "") + "</div>";
 }
 
 const T1_ACTIVES = [ "ing_retinol", "ing_bakuchiol", "ing_salicylic", "ing_glycolic", "ing_pdrn", "ing_lactic", "ing_vitamin_c", "ing_vitamin_c_derivative", "ing_azelaic", "ing_niacinamide", "ing_peptides" ];
@@ -1870,7 +1893,7 @@ async function renderOptResult() {
  });
  const resultEl = document.getElementById("routineResult");
  if (!names.length) {
-  resultEl.innerHTML = `<div class="empty-hint">עוד לא הוספת מוצרים. צלמי את רשימת הרכיבים של מוצר, ואחרי האישור הוא ייכנס לכאן.</div>`;
+  resultEl.innerHTML = `<div class="empty-hint">עוד לא הוספת מוצרים. ${gv("צלמי", "צלם", "אפשר לצלם")} את רשימת הרכיבים של מוצר, ואחרי האישור הוא ייכנס לכאן.</div>`;
   return;
  }
  resultEl.innerHTML = `<div class="empty-hint"><span class="spinner"></span> בונה...</div>`;
@@ -2062,7 +2085,7 @@ async function renderBuildResult() {
    }
   });
  } catch (err) {
-  resultEl.innerHTML = `<div class="empty-hint">לא הצלחנו להגיע למנוע השגרה כרגע. נסי לרענן את הדף.<br><small>${err && err.message || err}</small></div>`;
+  resultEl.innerHTML = `<div class="empty-hint">לא הצלחנו להגיע למנוע השגרה כרגע. ${gv("נסי לרענן", "נסה לרענן", "אפשר לנסות לרענן")} את הדף.<br><small>${err && err.message || err}</small></div>`;
   return;
  }
  await paintRoutine(res, resultEl, "build");
@@ -2152,7 +2175,7 @@ function matchRingHTML(pct) {
 }
 
 function renderSkinMatchHTML() {
- if (!selectedSkinType) return `<div class="match-card neutral">בחרי סוג עור בשאלון כדי לקבל מד התאמה אישי 🙂</div>`;
+ if (!selectedSkinType) return `<div class="match-card neutral">${gv("בחרי סוג עור בשאלון כדי לקבל", "בחר סוג עור בשאלון כדי לקבל", "בחירת סוג עור בשאלון תפעיל")} מד התאמה אישי 🙂</div>`;
  if (isProductSuitable()) return `<div class="match-card good">${matchRingHTML(95)}<div class="match-title">התאמה! ✨</div></div>`;
  return `<div class="match-card bad">${matchRingHTML(35)}<div class="match-title">התאמה נמוכה</div></div>`;
 }
@@ -2182,7 +2205,7 @@ async function runScanDemo() {
  const resultEl = document.getElementById("scanResult");
  resultEl.innerHTML = `<div class="scan-loading"><span class="spinner"></span> סורקת רכיבים...</div>`;
  await wait(1100);
- resultEl.innerHTML = `<div class="scan-card fade-in">\n    <div class="scan-product-name">Cos De BAHA – Salicylic Acid 4% Serum</div>\n    <div class="scan-active-line">רכיב פעיל מרכזי: חומצה סליצילית (BHA)</div>\n    ${renderSkinMatchHTML()}\n    ${renderInciBreakdownHTML()}\n    <div class="conflict-alert-box flex items-start gap-2"><span class="flex-shrink-0" style="margin-top:.15rem">${ICONS.warning}</span><span>שימי לב! המוצר מכיל BHA. אין להשתמש בו באותו ערב יחד עם הרטינול כדי למנוע גירוי!</span></div>\n    <div class="buy-heading">איפה לקנות:</div>\n    ${buyLinksHTML("Cos De BAHA Salicylic Acid 4% Serum", [ "iherb", "stylevana" ])}\n    <button type="button" class="btn-primary btn-shimmer mt-3" id="addScanToRoutineBtn">הוסיפי לשגרה השבועית שלי ➕${ICONS.sparkle}</button>\n  </div>`;
+ resultEl.innerHTML = `<div class="scan-card fade-in">\n    <div class="scan-product-name">Cos De BAHA – Salicylic Acid 4% Serum</div>\n    <div class="scan-active-line">רכיב פעיל מרכזי: חומצה סליצילית (BHA)</div>\n    ${renderSkinMatchHTML()}\n    ${renderInciBreakdownHTML()}\n    <div class="conflict-alert-box flex items-start gap-2"><span class="flex-shrink-0" style="margin-top:.15rem">${ICONS.warning}</span><span>${gv("שימי לב", "שים לב", "לתשומת לב")}! המוצר מכיל BHA. אין להשתמש בו באותו ערב יחד עם הרטינול כדי למנוע גירוי!</span></div>\n    <div class="buy-heading">איפה לקנות:</div>\n    ${buyLinksHTML("Cos De BAHA Salicylic Acid 4% Serum", [ "iherb", "stylevana" ])}\n    <button type="button" class="btn-primary btn-shimmer mt-3" id="addScanToRoutineBtn">➕ הוספה לשגרה השבועית שלי${ICONS.sparkle}</button>\n  </div>`;
  initMatchRing(resultEl);
  document.getElementById("addScanToRoutineBtn").addEventListener("click", async () => {
   const cb = document.querySelector('.ing-input[value="Salicylic Acid (BHA)"]');
@@ -2360,8 +2383,8 @@ function lblHint(text, small) {
 
 function labelErrorText(err) {
  const c = err && err.code;
- if (c === "AI_BUSY" || c === "AI_RATE_LIMIT") return "שירות הזיהוי עמוס כרגע. נסי שוב בעוד דקה.";
- if (c === "IMAGE_TOO_LARGE") return "התמונה גדולה מדי. נסי לחתוך אותה לרשימת הרכיבים בלבד.";
+ if (c === "AI_BUSY" || c === "AI_RATE_LIMIT") return "שירות הזיהוי עמוס כרגע. " + gv("נסי שוב", "נסה שוב", "אפשר לנסות שוב") + " בעוד דקה.";
+ if (c === "IMAGE_TOO_LARGE") return "התמונה גדולה מדי. " + gv("נסי לחתוך", "נסה לחתוך", "אפשר לחתוך") + " אותה לרשימת הרכיבים בלבד.";
  if (c === "AI_BAD_RESPONSE" && /RECITATION/.test(String(err.message || ""))) return 'שירות הזיהוי לא הסכים להעתיק את הרשימה מהתמונה. אפשר לצלם שוב מזווית אחרת, או ללחוץ למטה על "הדבקת רשימת רכיבים".';
  if (c === "AI_KEY_MISSING" || c === "AI_MODEL_MISSING" || c === "LABEL_MODULE_MISSING") return "שירות הזיהוי עוד לא הוגדר.";
  return "משהו השתבש בקריאת התווית.";
@@ -2410,7 +2433,7 @@ async function runLabelScanInner_(file, el) {
  try {
   b64 = await imageToJpegB64(file, 1600);
  } catch (e) {
-  el.innerHTML = lblHint("לא הצלחנו לפתוח את התמונה. נסי תמונה אחרת.");
+  el.innerHTML = lblHint("לא הצלחנו לפתוח את התמונה. " + gv("נסי תמונה אחרת", "נסה תמונה אחרת", "אפשר לנסות תמונה אחרת") + ".");
   return;
  }
  const usedFront = frontFile;
@@ -2452,7 +2475,7 @@ function labelResultOk_(res, el, from) {
   return false;
  }
  if (!res.data.readable) {
-  el.innerHTML = lblHint(from === "text" ? "לא מצאנו רכיבים בטקסט. בדקי שהדבקת את רשימת הרכיבים עצמה, מופרדת בפסיקים." : "לא הצלחנו לקרוא רשימת רכיבים בתמונה. נסי לצלם שוב — קרוב יותר, ישר, ובתאורה טובה.");
+  el.innerHTML = lblHint(from === "text" ? "לא מצאנו רכיבים בטקסט. " + gv("בדקי שהדבקת את", "בדוק שהדבקת את", "כדאי לוודא שהודבקה") + " רשימת הרכיבים עצמה, מופרדת בפסיקים." : "לא הצלחנו לקרוא רשימת רכיבים בתמונה. " + gv("נסי לצלם", "נסה לצלם", "אפשר לצלם") + " שוב — קרוב יותר, ישר, ובתאורה טובה.");
   return false;
  }
  return true;
@@ -2476,11 +2499,11 @@ async function runPasteScan() {
  const el = document.getElementById("scanResult"), st = document.getElementById("labelScanStatus");
  const text = (document.getElementById("pasteInput").value || "").trim();
  if (!text) {
-  showToast("הדביקי קודם את רשימת הרכיבים");
+  showToast(gv("הדביקי קודם את רשימת הרכיבים", "הדבק קודם את רשימת הרכיבים", "קודם צריך להדביק את רשימת הרכיבים"));
   return;
  }
  if (/^\s*(https?:|www\.)\S*\s*$/i.test(text)) {
-  el.innerHTML = lblHint("קישור למוצר עוד לא נתמך.", "פתחי את עמוד המוצר, העתיקי את רשימת הרכיבים, והדביקי אותה כאן.");
+  el.innerHTML = lblHint("קישור למוצר עוד לא נתמך.", gv("פתחי את עמוד המוצר, העתיקי את רשימת הרכיבים, והדביקי אותה כאן.", "פתח את עמוד המוצר, העתק את רשימת הרכיבים, והדבק אותה כאן.", "אפשר לפתוח את עמוד המוצר, להעתיק את רשימת הרכיבים ולהדביק כאן."));
   return;
  }
  if (st) st.innerHTML = `<div class="scan-loading" style="padding:.6rem 0"><span class="spinner"></span> בודקת את הרכיבים...</div>`;
@@ -2521,7 +2544,7 @@ function setFrontFile(f) {
  frontFile = f || null;
  const st = document.getElementById("frontStatus");
  if (!st) return;
- st.innerHTML = frontFile ? `<span class="lbl-choice on">✓ החזית מוכנה. עכשיו צלמי את רשימת הרכיבים <button type="button" id="frontClear" aria-label="הסרה" style="border:0;background:none;cursor:pointer">✕</button></span>` : "";
+ st.innerHTML = frontFile ? `<span class="lbl-choice on">✓ החזית מוכנה. עכשיו ${gv("צלמי ", "צלם ", "")}את רשימת הרכיבים <button type="button" id="frontClear" aria-label="הסרה" style="border:0;background:none;cursor:pointer">✕</button></span>` : "";
  const fb = document.getElementById("frontPhotoBtn");
  if (fb) fb.textContent = frontFile ? "✓ החזית צולמה · לצלם שוב" : "📸 רוצה שנזהה גם את שם המוצר? אפשר לצלם קודם את החזית (רשות)";
  const c = document.getElementById("frontClear");
@@ -2711,7 +2734,7 @@ function renderLabelResult(d) {
   confirm.forEach((i, k) => {
    const sug = (i.suggestions || []).filter(s => !s.isVehicle);
    let q;
-   if (i.status === "CONFUSABLE") q = `"${escHtml(i.raw)}" קרוב גם לרכיב שהמערכת לא מנתחת (${escHtml(i.near_term || "")}). בדקי בתווית לפני שתאשרי.`; else if (sug.length > 1) q = `"${escHtml(i.raw)}" — לאיזה רכיב הכוונה?`; else q = `כתוב "${escHtml(i.raw)}". האם זה <b>${escHtml(sug[0].canonical_he)}</b>?`;
+   if (i.status === "CONFUSABLE") q = `"${escHtml(i.raw)}" קרוב גם לרכיב שהמערכת לא מנתחת (${escHtml(i.near_term || "")}). ${gv("בדקי בתווית לפני שתאשרי", "בדוק בתווית לפני שתאשר", "כדאי לבדוק בתווית לפני האישור")}.`; else if (sug.length > 1) q = `"${escHtml(i.raw)}" — לאיזה רכיב הכוונה?`; else q = `כתוב "${escHtml(i.raw)}". האם זה <b>${escHtml(sug[0].canonical_he)}</b>?`;
    const btns = sug.map(s => `<button type="button" class="lbl-choice" data-k="${k}" data-id="${escHtml(s.ingredient_id)}" data-he="${escHtml(s.canonical_he)}">${sug.length > 1 || i.status === "CONFUSABLE" ? escHtml(s.canonical_he) : "כן, זה הרכיב"}</button>`).join("") + `<button type="button" class="lbl-choice" data-k="${k}" data-id="">${sug.length > 1 || i.status === "CONFUSABLE" ? "אף אחד מהם" : "לא"}</button>`;
    h += row(`${q}<br>${btns}`);
   });
@@ -2729,13 +2752,13 @@ function renderLabelResult(d) {
  if (baseRows || knownRows || g.not_analyzed.length) {
   h += `<div class="lbl-sec"><p style="margin:.2rem 0 .4rem"><b>✨ התמקדנו ברכיבים הפעילים ובאלה ששווה לשים לב אליהם.</b></p>` + `<details class="lbl-details"><summary>שאר רכיבי התווית</summary>` + (baseRows ? `<p class="text-xs mt-2" style="color:var(--ink-soft)"><b>רכיבי בסיס</b></p>` + baseRows : "") + (knownRows ? `<p class="text-xs mt-2" style="color:var(--ink-soft)"><b>רכיבים מוכרים — עוד אין לנו עליהם מידע ממקור מקצועי</b></p>` + knownRows : "") + (g.not_analyzed.length ? `<p class="text-xs mt-2" style="color:var(--ink-soft)"><b>לא נבדקו — זה לא אומר שהם בטוחים.</b></p>` + g.not_analyzed.map(i => row(escHtml(i.raw))).join("") : "") + `</details></div>`;
  }
- h += d._from === "text" ? `<p class="text-xs mt-3" style="color:var(--ink-soft)">הרשימה נלקחה מהטקסט שהדבקת. אם משהו לא תואם למה שכתוב על המוצר — אל תאשרי.</p>` : `<p class="text-xs mt-3" style="color:var(--ink-soft)">את הרשימה קראה בינה מלאכותית. אם משהו לא תואם למה שכתוב על התווית — אל תאשרי.</p>`;
+ h += d._from === "text" ? `<p class="text-xs mt-3" style="color:var(--ink-soft)">הרשימה נלקחה מהטקסט שהדבקת. אם משהו לא תואם למה שכתוב על המוצר — ${gv("אל תאשרי", "אל תאשר", "לא לאשר")}.</p>` : `<p class="text-xs mt-3" style="color:var(--ink-soft)">את הרשימה קראה בינה מלאכותית. אם משהו לא תואם למה שכתוב על התווית — ${gv("אל תאשרי", "אל תאשר", "לא לאשר")}.</p>`;
  h += `<label class="text-xs mt-3" style="display:block;color:var(--ink-soft)" for="lblProductName">איך לקרוא למוצר בשגרה שלך?</label>` + `<input type="text" id="lblProductName" class="onboarding-input" maxlength="60" style="margin-top:.3rem" value="${escHtml(d.product_name || autoProductName(leadOf(g.recognized.map(i => ({
   id: i.ingredient_id,
   he: i.canonical_he || i.ingredient_id,
   position: i.position
- }))), (g.sun_filters || []).length > 0))}" placeholder="למשל: קרם ההגנה שלי">` + (d.brand ? `<p class="text-xs mt-1" style="color:var(--ink-soft)">מותג: <bdi>${escHtml(d.brand)}</bdi></p>` : "") + (d._from === "image" && !d.product_name && !d.front_used && lastLabelFile ? `<p class="text-xs mt-1"><button type="button" class="lbl-wrong" id="lblAddFront">📸 רוצה שנזהה את שם המוצר? צלמי את החזית</button></p>` : "");
- h += `<button type="button" class="btn-primary btn-shimmer mt-3" id="addLabelToRoutineBtn"${confirm.length ? " disabled" : ""}>הוסיפי לשגרה השבועית שלי ➕</button>`;
+ }))), (g.sun_filters || []).length > 0))}" placeholder="למשל: קרם ההגנה שלי">` + (d.brand ? `<p class="text-xs mt-1" style="color:var(--ink-soft)">מותג: <bdi>${escHtml(d.brand)}</bdi></p>` : "") + (d._from === "image" && !d.product_name && !d.front_used && lastLabelFile ? `<p class="text-xs mt-1"><button type="button" class="lbl-wrong" id="lblAddFront">📸 רוצה שנזהה את שם המוצר? ${gv("צלמי את החזית", "צלם את החזית", "אפשר לצלם את החזית")}</button></p>` : "");
+ h += `<button type="button" class="btn-primary btn-shimmer mt-3" id="addLabelToRoutineBtn"${confirm.length ? " disabled" : ""}>➕ הוספה לשגרה השבועית שלי</button>`;
  if (confirm.length) h += `<p class="text-xs mt-2" id="lblPending" style="color:var(--ink-soft);text-align:center">ענִי קודם על ${confirm.length === 1 ? "השאלה" : "כל השאלות"} למעלה</p>`;
  h += `</div>`;
  el.innerHTML = h;
@@ -2935,7 +2958,7 @@ const MIX_WITHHELD = "בגלל המצב הבריאותי שסומן, לא מוצ
 async function runAskIngredient() {
  const q = (document.getElementById("askQ").value || "").trim(), out = document.getElementById("askResult");
  if (!q) {
-  showToast("כתבי שם של רכיב");
+  showToast(gv("כתבי שם של רכיב", "כתוב שם של רכיב", "צריך שם של רכיב"));
   return;
  }
  out.innerHTML = `<div class="scan-loading" style="padding:.4rem 0"><span class="spinner"></span> מחפשת...</div>`;
@@ -2956,7 +2979,7 @@ async function runAskIngredient() {
  }
  const d = r.data;
  if (!d.found) {
-  out.innerHTML = askBox("match-card neutral", `לא מצאנו את "<bdi>${escHtml(q)}</bdi>" אצלנו. נסי שם אחר — בעברית או באנגלית.`);
+  out.innerHTML = askBox("match-card neutral", `לא מצאנו את "<bdi>${escHtml(q)}</bdi>" אצלנו. ${gv("נסי שם אחר", "נסה שם אחר", "אפשר לנסות שם אחר")} — בעברית או באנגלית.`);
   return;
  }
  let h = `<div class="font-semibold">${escHtml(d.name_he)} <small style="color:var(--ink-soft)"><bdi dir="ltr">${escHtml(d.name_en)}</bdi></small></div>`;
@@ -3269,6 +3292,7 @@ document.getElementById("profileLogoutBtn").addEventListener("click", async () =
  selectedGender = null;
  selectedSkinType = null;
  selectedGoals.clear();
+ applyVoice();
  {
   const ns = document.getElementById("navSubtitle");
   if (ns) ns.textContent = "SMART SKINCARE";
@@ -3350,6 +3374,7 @@ function applyProfile(profile) {
  userName = profile.name || "";
  userEmail = profile.email !== undefined ? profile.email : "";
  selectedGender = profile.gender || null;
+ applyVoice();
  selectedSkinType = profile.skinType || null;
  userExperience = profile.experience || null;
  userAge = profile.age || null;
@@ -3371,7 +3396,9 @@ let userAge = null;
 
 const EXPERIENCE_OPTIONS = [ {
  key: "beginner",
- label: "מתחילה"
+ get label() {
+  return gv("מתחילה", "מתחיל", "בתחילת הדרך");
+ }
 }, {
  key: "experienced",
  label: "יש לי ניסיון"
@@ -3401,7 +3428,9 @@ const HEALTH_OPTIONS = [ {
  label: "מניקה"
 }, {
  key: "derm",
- label: "מקבלת טיפול עור מרופא/ה (קרם מרשם, פילינג, לייזר)"
+ get label() {
+  return gv("מקבלת טיפול עור", "מקבל טיפול עור", "בטיפול עור") + " מרופא/ה (קרם מרשם, פילינג, לייזר)";
+ }
 } ];
 
 function renderFlagSelectInto(containerEl, items, target) {
@@ -3501,6 +3530,7 @@ function autoAdvanceOnboarding() {
 
 renderSingleSelectInto(document.getElementById("onbGenderGroup"), GENDER_OPTIONS, k => {
  selectedGender = k;
+ applyVoice();
 }, null, autoAdvanceOnboarding);
 
 renderSingleSelectInto(document.getElementById("onbSkinTypeGroup"), SKIN_TYPES, k => {
@@ -3529,7 +3559,7 @@ function showOnbStep(idx) {
  const hideNext = idx === 1 || idx === 2 || stepNeedsPick(idx);
  nextBtn.hidden = hideNext;
  nextBtn.style.display = hideNext ? "none" : "";
- nextBtn.textContent = idx === ONB_STEPS_COUNT - 1 ? "בני לי שגרה ✨" : "המשך";
+ nextBtn.textContent = idx === ONB_STEPS_COUNT - 1 ? "בנו לי שגרה ✨" : "המשך";
  document.getElementById("onbError").textContent = "";
  onbCurrentStep = idx;
 }
@@ -3685,7 +3715,7 @@ const LEGAL_DATE = "27.10.2026";
 const LEGAL = {
  privacy: {
   title: "מדיניות פרטיות",
-  html: g => `\n<p class="legal-meta">גרסה ${LEGAL_VERSION} · ${LEGAL_DATE}</p>\n<p><b>בקצרה:</b> המצב הבריאותי ${g("שלך ", "שלך ", "")}נשמר רק בטלפון. תמונות לא נשמרות אצלנו. אם ${g("התחברת", "התחברת", "יש חשבון")} — הפרופיל והמוצרים נשמרים בחשבון, והמייל עצמו לא נשמר. אין פרסומות ואין כלי מעקב. אם ${g("הפעלת", "הפעלת", "הופעלו")} תזכורות — נשמרות אצלנו רק כתובת ההתראות של המכשיר והשעות ${g("שבחרת", "שבחרת", "שנבחרו")}, בלי שם.</p>\n<h3>1. מי אנחנו</h3>\n<p>GlamLab הוא פרויקט לימודי שנבנה במסגרת קורס. הוא אינו עסק רשום, אינו מוכר מוצרים ואינו גובה תשלום.</p>\n<h3>2. מה נשמר רק בטלפון שלך</h3>\n<p>בזיכרון הדפדפן בטלפון (אחסון מקומי, לא עוגיות): המצב הבריאותי ${g("שסימנת", "שסימנת", "שסומן")} (הריון, הנקה, רואקוטן, טיפול עור מרופא/ה), השגרה שנבנתה לך, הפרופיל, המוצרים ${g("שסרקת", "שסרקת", "שנסרקו")}, הסריקה האחרונה, הרצף, הצ'קליסט והגדרות, ואם ${g("הפעלת", "הפעלת", "הופעלו")} תזכורות — עותק של השם והלשון לצורך ההתראה. המידע הזה לא נשלח אלינו לשמירה. אפשר למחוק אותו מהפרופיל או בניקוי נתוני הדפדפן.</p>\n<h3>3. מה נשמר אצלנו — רק ${g("אם התחברת", "אם התחברת", "עם חשבון")}</h3>\n<p>${g("אם התחברת עם מייל, נשמרים בחשבון כדי שתוכלי", "אם התחברת עם מייל, נשמרים בחשבון כדי שתוכל", "בהתחברות עם מייל, נשמרים בחשבון כדי שאפשר יהיה")} לחזור אליהם ממכשיר אחר: שם, גיל, מגדר, סוג עור, מטרות, רגישות העור, ניסיון עם רכיבים פעילים, המוצרים שסרקת והבחירות לגביהם, שעות השגרה, ומועד אישור התנאים.</p>\n<p><b>לא נשמרים בחשבון:</b> המייל עצמו (נשמרת רק "טביעה" מקודדת שלו, שממנה אי אפשר לשחזר את הכתובת), המצב הבריאותי, השגרה עצמה, ותמונות.</p>\n<h3>4. תזכורות — רק אם הפעלת</h3>\n<p>כשמפעילים את "תזכורת בשעות האלה" בפרופיל, נשמרים אצלנו, בשרת של Supabase באירופה:</p>\n<ul>\n<li>כתובת ההתראות של המכשיר — מזהה טכני שהדפדפן יוצר כדי שאפשר יהיה לשלוח אליו התראה. היא לא כוללת שם, מייל או מספר טלפון.</li>\n<li>שעת הבוקר ושעת הערב ${g("שבחרת", "שבחרת", "שנבחרו")}, ואזור הזמן של הטלפון.</li>\n<li>התאריך שבו נשלחה התזכורת האחרונה, כדי לא לשלוח פעמיים.</li>\n</ul>\n<p><b>לא נשמרים שם:</b> השם, המייל, המצב הבריאותי, השגרה והמוצרים.</p>\n<p><b>השם שבהתראה</b> מתווסף בטלפון עצמו, ברגע ההצגה. אצלנו נשלח רק "הגיע זמן הבוקר" או "הגיע זמן הערב". ${g("שימי לב", "שים לב", "לתשומת לב")}: לפי הגדרות הטלפון, השם עשוי להופיע גם על מסך נעול.</p>\n<p><b>ההתראה עוברת</b> דרך שירות ההתראות של יצרנית הטלפון (Google באנדרואיד, Apple באייפון), כמו כל התראה באפליקציה.</p>\n<p><b>כיבוי המתג מוחק את כל אלה מהשרת מיד.</b> גם איפוס האפליקציה ומחיקה מהטלפון מכבים את התזכורות. אם שירות ההתראות של הטלפון מודיע לנו שהמנוי בוטל (למשל אחרי ביטול ההרשאה), הנתונים נמחקים אוטומטית.</p>\n<h3>5. סריקת תוויות ותמונות</h3>\n<p>${g("כשאת סורקת", "כשאתה סורק", "בסריקת")} תווית, התמונה מוקטנת בטלפון ונשלחת לשירות Gemini של Google כדי לקרוא את רשימת הרכיבים. אנחנו לא שומרים את התמונה. אנחנו משתמשים בגרסה החינמית של השירות, ובה Google עשויה להשתמש בתוכן שנשלח לשיפור השירותים שלה. לכן: ${g("צלמי", "צלם", "כדאי לצלם")} רק את התווית — בלי פנים, אנשים או מסמכים.</p>\n<h3>6. "שאלי אותנו"</h3>\n<p>השאלות נענות מתוך המקורות שלנו, בלי בינה מלאכותית, ולא נשמרות.</p>\n<h3>7. גורמים חיצוניים</h3>\n<ul>\n<li><b>Google</b> — מארחת את האפליקציה בגרסת הדפדפן ואת הגיליון שבו נשמרים החשבונות, שולחת את מייל הקוד, ומפעילה את קריאת התוויות (Gemini).</li>\n<li><b>Google Fonts ו-cdnjs</b> — מהם נטענים הגופנים והעיצוב. הטלפון פונה אליהם ישירות, ולכן הם רואים כתובת IP, כמו בכל אתר.</li>\n<li><b>GitHub (Microsoft)</b> — מארחת את האפליקציה שמותקנת על מסך הבית. הטלפון פונה אליה ישירות, ולכן היא רואה כתובת IP, כמו בכל אתר.</li>\n<li><b>Supabase</b> — שרת באירופה ששומר את נתוני התזכורות ושולח אותן. רק אם ${g("הפעלת", "הפעלת", "הופעלו")} תזכורות.</li>\n<li><b>שירותי ההתראות של Google ו-Apple</b> — מעבירים את ההתראה לטלפון.</li>\n<li><b>חנויות</b> — כפתורי הקנייה פותחים חיפוש רגיל באתר החנות. מרגע ${g("שעברת", "שעברת", "המעבר")} לחנות, חלה המדיניות שלה.</li>\n</ul>\n<h3>8. עוגיות, מעקב ופרסום</h3>\n<p>אנחנו לא משתמשים בעוגיות, בכלי אנליטיקה או בפרסום. Google, שמארחת את האפליקציה, עשויה להשתמש בעוגיות משלה.</p>\n<h3>9. כמה זמן</h3>\n<p>קוד הכניסה תקף 10 דקות. מפתח הכניסה בטלפון תקף 180 יום. חשבון נשמר ${g("עד שתמחקי אותו", "עד שתמחק אותו", "עד שנמחק")}, או עד 12 חודשים בלי התחברות — ואז נמחק. נתוני התזכורות נשמרים כל עוד התזכורות פעילות, ונמחקים בכיבוי. מה שבטלפון נשאר ${g("עד שתמחקי", "עד שתמחק", "עד שנמחק")}.</p>\n<h3>10. הזכויות שלך — הכול מתוך האפליקציה</h3>\n<ul>\n<li><b>לראות</b> — כל מה שנשמר מוצג בפרופיל.</li>\n<li><b>לתקן</b> — "עריכה" בפרופיל, או "בנו לי שגרה מעודכנת".</li>\n<li><b>למחוק</b> — "מחיקת החשבון" בפרופיל מוחקת מהשרת את כל מה שנשמר; בהתנתקות אפשר למחוק גם מהטלפון; ותזכורות — בכיבוי המתג "תזכורת בשעות האלה".</li>\n</ul>\n<h3>11. אבטחה</h3>\n<p>המייל, קוד הכניסה ומפתח הכניסה נשמרים רק כטביעה מקודדת. מספר הניסיונות מוגבל. הגישה לגיליון מוגבלת לבעלת הפרויקט. רק המכשיר עצמו יכול לשנות או למחוק את התזכורות שלו. מפתחות השליחה שמורים בכספת מוצפנת בשרת, ואינם נגישים לאף אדם. אין שיטת אבטחה מושלמת, אבל שמרנו אצלנו את המינימום.</p>\n<h3>12. גיל</h3>\n<p>GlamLab מיועדת לגיל 16 ומעלה.</p>\n<h3>13. שינויים</h3>\n<p>אם המדיניות תשתנה, נעלה את מספר הגרסה ונבקש ${g("את אישורך", "את אישורך", "אישור")} מחדש.</p>`
+  html: g => `\n<p class="legal-meta">גרסה ${LEGAL_VERSION} · ${LEGAL_DATE}</p>\n<p><b>בקצרה:</b> המצב הבריאותי ${g("שלך ", "שלך ", "")}נשמר רק בטלפון. תמונות לא נשמרות אצלנו. אם ${g("התחברת", "התחברת", "יש חשבון")} — הפרופיל והמוצרים נשמרים בחשבון, והמייל עצמו לא נשמר. אין פרסומות ואין כלי מעקב. אם ${g("הפעלת", "הפעלת", "הופעלו")} תזכורות — נשמרות אצלנו רק כתובת ההתראות של המכשיר והשעות ${g("שבחרת", "שבחרת", "שנבחרו")}, בלי שם.</p>\n<h3>1. מי אנחנו</h3>\n<p>GlamLab הוא פרויקט לימודי שנבנה במסגרת קורס. הוא אינו עסק רשום, אינו מוכר מוצרים ואינו גובה תשלום.</p>\n<h3>2. מה נשמר רק בטלפון שלך</h3>\n<p>בזיכרון הדפדפן בטלפון (אחסון מקומי, לא עוגיות): המצב הבריאותי ${g("שסימנת", "שסימנת", "שסומן")} (הריון, הנקה, רואקוטן, טיפול עור מרופא/ה), השגרה שנבנתה לך, הפרופיל, המוצרים ${g("שסרקת", "שסרקת", "שנסרקו")}, הסריקה האחרונה, הרצף, הצ'קליסט והגדרות, ואם ${g("הפעלת", "הפעלת", "הופעלו")} תזכורות — עותק של השם והלשון לצורך ההתראה. המידע הזה לא נשלח אלינו לשמירה. אפשר למחוק אותו מהפרופיל או בניקוי נתוני הדפדפן.</p>\n<h3>3. מה נשמר אצלנו — רק ${g("אם התחברת", "אם התחברת", "עם חשבון")}</h3>\n<p>${g("אם התחברת עם מייל, נשמרים בחשבון כדי שתוכלי", "אם התחברת עם מייל, נשמרים בחשבון כדי שתוכל", "בהתחברות עם מייל, נשמרים בחשבון כדי שאפשר יהיה")} לחזור אליהם ממכשיר אחר: שם, גיל, מגדר, סוג עור, מטרות, רגישות העור, ניסיון עם רכיבים פעילים, המוצרים שסרקת והבחירות לגביהם, שעות השגרה, ומועד אישור התנאים.</p>\n<p><b>לא נשמרים בחשבון:</b> המייל עצמו (נשמרת רק "טביעה" מקודדת שלו, שממנה אי אפשר לשחזר את הכתובת), המצב הבריאותי, השגרה עצמה, ותמונות.</p>\n<h3>4. תזכורות — רק אם הפעלת</h3>\n<p>כשמפעילים את "תזכורת בשעות האלה" בפרופיל, נשמרים אצלנו, בשרת של Supabase באירופה:</p>\n<ul>\n<li>כתובת ההתראות של המכשיר — מזהה טכני שהדפדפן יוצר כדי שאפשר יהיה לשלוח אליו התראה. היא לא כוללת שם, מייל או מספר טלפון.</li>\n<li>שעת הבוקר ושעת הערב ${g("שבחרת", "שבחרת", "שנבחרו")}, ואזור הזמן של הטלפון.</li>\n<li>התאריך שבו נשלחה התזכורת האחרונה, כדי לא לשלוח פעמיים.</li>\n</ul>\n<p><b>לא נשמרים שם:</b> השם, המייל, המצב הבריאותי, השגרה והמוצרים.</p>\n<p><b>השם שבהתראה</b> מתווסף בטלפון עצמו, ברגע ההצגה. אצלנו נשלח רק "הגיע זמן הבוקר" או "הגיע זמן הערב". ${g("שימי לב", "שים לב", "לתשומת לב")}: לפי הגדרות הטלפון, השם עשוי להופיע גם על מסך נעול.</p>\n<p><b>ההתראה עוברת</b> דרך שירות ההתראות של יצרנית הטלפון (Google באנדרואיד, Apple באייפון), כמו כל התראה באפליקציה.</p>\n<p><b>כיבוי המתג מוחק את כל אלה מהשרת מיד.</b> גם איפוס האפליקציה ומחיקה מהטלפון מכבים את התזכורות. אם שירות ההתראות של הטלפון מודיע לנו שהמנוי בוטל (למשל אחרי ביטול ההרשאה), הנתונים נמחקים אוטומטית.</p>\n<h3>5. סריקת תוויות ותמונות</h3>\n<p>${g("כשאת סורקת", "כשאתה סורק", "בסריקת")} תווית, התמונה מוקטנת בטלפון ונשלחת לשירות Gemini של Google כדי לקרוא את רשימת הרכיבים. אנחנו לא שומרים את התמונה. אנחנו משתמשים בגרסה החינמית של השירות, ובה Google עשויה להשתמש בתוכן שנשלח לשיפור השירותים שלה. לכן: ${g("צלמי", "צלם", "כדאי לצלם")} רק את התווית — בלי פנים, אנשים או מסמכים.</p>\n<h3>6. "${g("שאלי אותנו", "שאל אותנו", "יש שאלה?")}"</h3>\n<p>השאלות נענות מתוך המקורות שלנו, בלי בינה מלאכותית, ולא נשמרות.</p>\n<h3>7. גורמים חיצוניים</h3>\n<ul>\n<li><b>Google</b> — מארחת את האפליקציה בגרסת הדפדפן ואת הגיליון שבו נשמרים החשבונות, שולחת את מייל הקוד, ומפעילה את קריאת התוויות (Gemini).</li>\n<li><b>Google Fonts ו-cdnjs</b> — מהם נטענים הגופנים והעיצוב. הטלפון פונה אליהם ישירות, ולכן הם רואים כתובת IP, כמו בכל אתר.</li>\n<li><b>GitHub (Microsoft)</b> — מארחת את האפליקציה שמותקנת על מסך הבית. הטלפון פונה אליה ישירות, ולכן היא רואה כתובת IP, כמו בכל אתר.</li>\n<li><b>Supabase</b> — שרת באירופה ששומר את נתוני התזכורות ושולח אותן. רק אם ${g("הפעלת", "הפעלת", "הופעלו")} תזכורות.</li>\n<li><b>שירותי ההתראות של Google ו-Apple</b> — מעבירים את ההתראה לטלפון.</li>\n<li><b>חנויות</b> — כפתורי הקנייה פותחים חיפוש רגיל באתר החנות. מרגע ${g("שעברת", "שעברת", "המעבר")} לחנות, חלה המדיניות שלה.</li>\n</ul>\n<h3>8. עוגיות, מעקב ופרסום</h3>\n<p>אנחנו לא משתמשים בעוגיות, בכלי אנליטיקה או בפרסום. Google, שמארחת את האפליקציה, עשויה להשתמש בעוגיות משלה.</p>\n<h3>9. כמה זמן</h3>\n<p>קוד הכניסה תקף 10 דקות. מפתח הכניסה בטלפון תקף 180 יום. חשבון נשמר ${g("עד שתמחקי אותו", "עד שתמחק אותו", "עד שנמחק")}, או עד 12 חודשים בלי התחברות — ואז נמחק. נתוני התזכורות נשמרים כל עוד התזכורות פעילות, ונמחקים בכיבוי. מה שבטלפון נשאר ${g("עד שתמחקי", "עד שתמחק", "עד שנמחק")}.</p>\n<h3>10. הזכויות שלך — הכול מתוך האפליקציה</h3>\n<ul>\n<li><b>לראות</b> — כל מה שנשמר מוצג בפרופיל.</li>\n<li><b>לתקן</b> — "עריכה" בפרופיל, או "בנו לי שגרה מעודכנת".</li>\n<li><b>למחוק</b> — "מחיקת החשבון" בפרופיל מוחקת מהשרת את כל מה שנשמר; בהתנתקות אפשר למחוק גם מהטלפון; ותזכורות — בכיבוי המתג "תזכורת בשעות האלה".</li>\n</ul>\n<h3>11. אבטחה</h3>\n<p>המייל, קוד הכניסה ומפתח הכניסה נשמרים רק כטביעה מקודדת. מספר הניסיונות מוגבל. הגישה לגיליון מוגבלת לבעלת הפרויקט. רק המכשיר עצמו יכול לשנות או למחוק את התזכורות שלו. מפתחות השליחה שמורים בכספת מוצפנת בשרת, ואינם נגישים לאף אדם. אין שיטת אבטחה מושלמת, אבל שמרנו אצלנו את המינימום.</p>\n<h3>12. גיל</h3>\n<p>GlamLab מיועדת לגיל 16 ומעלה.</p>\n<h3>13. שינויים</h3>\n<p>אם המדיניות תשתנה, נעלה את מספר הגרסה ונבקש ${g("את אישורך", "את אישורך", "אישור")} מחדש.</p>`
  },
  terms: {
   title: "תנאי שימוש",
@@ -3929,7 +3959,7 @@ async function accSendCode() {
    setTimeout(() => c.focus(), 60);
   } else accErr(r && r.error && r.error.message || "לא הצלחנו לשלוח קוד.");
  } catch (e) {
-  accErr("לא הצלחנו להגיע לשרת. נסי שוב.");
+  accErr("לא הצלחנו להגיע לשרת. " + gv("נסי שוב", "נסה שוב", "אפשר לנסות שוב") + ".");
  }
  btn.innerHTML = orig;
  btn.disabled = false;
@@ -3960,7 +3990,7 @@ async function accVerify() {
  btn.disabled = false;
  accBusy = false;
  if (!r) {
-  accErr("לא הצלחנו להגיע לשרת. נסי שוב.");
+  accErr("לא הצלחנו להגיע לשרת. " + gv("נסי שוב", "נסה שוב", "אפשר לנסות שוב") + ".");
   return;
  }
  if (!r.ok) {
@@ -4054,6 +4084,7 @@ function accRefreshOnbSelections() {
  };
  re("onbGenderGroup", el => renderSingleSelectInto(el, GENDER_OPTIONS, k => {
   selectedGender = k;
+  applyVoice();
  }, selectedGender, autoAdvanceOnboarding));
  re("onbSkinTypeGroup", el => renderSingleSelectInto(el, SKIN_TYPES, k => {
   selectedSkinType = k;
@@ -4099,7 +4130,7 @@ function accIcon(sel) {
 function accRenderActions() {
  const el = document.getElementById("accountActions");
  if (!el) return;
- el.innerHTML = accSession() ? `<div style="display:flex;justify-content:space-between;align-items:center;gap:1rem"><button type="button" class="acc-link" id="accLogoutBtn">התנתקות</button><button type="button" class="acc-link danger" id="accDeleteBtn">מחיקת החשבון</button></div>` : `<div class="toggle-desc mb-2">התחברי כדי לשמור בחשבון ☁️ — וכך לחזור לשגרה ולמוצרים שלך גם מטלפון אחר. המצב הבריאותי נשאר רק בטלפון.</div>\n       <button type="button" class="auth-btn" id="accLoginGmailBtn">${accIcon("#authGmailBtn")}התחברות עם Gmail</button>\n       <button type="button" class="auth-btn mt-2" id="accLoginBtn">${accIcon("#authEmailBtn")}התחברות עם דוא"ל</button>`;
+ el.innerHTML = accSession() ? `<div style="display:flex;justify-content:space-between;align-items:center;gap:1rem"><button type="button" class="acc-link" id="accLogoutBtn">התנתקות</button><button type="button" class="acc-link danger" id="accDeleteBtn">מחיקת החשבון</button></div>` : `<div class="toggle-desc mb-2">${gv("התחברי כדי לשמור בחשבון ☁️ — וכך לחזור לשגרה ולמוצרים שלך", "התחבר כדי לשמור בחשבון ☁️ — וכך לחזור לשגרה ולמוצרים שלך", "התחברות שומרת בחשבון ☁️ — וכך אפשר לחזור לשגרה ולמוצרים")} גם מטלפון אחר. המצב הבריאותי נשאר רק בטלפון.</div>\n       <button type="button" class="auth-btn" id="accLoginGmailBtn">${accIcon("#authGmailBtn")}התחברות עם Gmail</button>\n       <button type="button" class="auth-btn mt-2" id="accLoginBtn">${accIcon("#authEmailBtn")}התחברות עם דוא"ל</button>`;
 }
 
 function accWipeDevice() {
@@ -4115,7 +4146,7 @@ function accWipeDevice() {
 }
 
 async function accAfterLeave(msg) {
- const wipe = await accConfirm("למחוק גם מהטלפון הזה?", "אם זה לא הטלפון שלך — כדאי למחוק. אם כן, אפשר להשאיר ולהמשיך כאורח/ת.", "למחוק מהטלפון", "להשאיר");
+ const wipe = await accConfirm("למחוק גם מהטלפון הזה?", "אם זה לא הטלפון שלך — כדאי למחוק. אם כן, אפשר להשאיר ולהמשיך " + gv("כאורחת", "כאורח", "כאורח/ת") + ".", "למחוק מהטלפון", "להשאיר");
  if (wipe) {
   accWipeDevice();
   return;
@@ -4133,7 +4164,7 @@ async function accAfterLeave(msg) {
 async function accLogout() {
  const s = accSession();
  if (!s) return;
- if (!await accConfirm("התנתקות", "הנתונים יישארו שמורים בחשבון, ותוכלי לחזור אליהם בהתחברות.", "להתנתק", "ביטול")) return;
+ if (!await accConfirm("התנתקות", "הנתונים יישארו שמורים בחשבון, " + gv("ותוכלי לחזור", "ותוכל לחזור", "ואפשר לחזור") + " אליהם בהתחברות.", "להתנתק", "ביטול")) return;
  await accPushNow();
  try {
   await apiCall("account", "logout", {
@@ -4158,7 +4189,7 @@ async function accDelete() {
   if (r && r.error && r.error.code === "ACCOUNT_SESSION_EXPIRED") {
    accExpired();
    showToast("צריך להתחבר שוב כדי למחוק את החשבון");
-  } else showToast("המחיקה לא הצליחה. נסי שוב.");
+  } else showToast("המחיקה לא הצליחה. " + gv("נסי שוב", "נסה שוב", "אפשר לנסות שוב") + ".");
   return;
  }
  accSetSession(null);
