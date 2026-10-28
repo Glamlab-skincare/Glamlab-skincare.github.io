@@ -521,7 +521,7 @@
     <p class="modal-tip">🧴 <b>שמן:</b> ברק בכל הפנים תוך שעה מהניקוי.</p>
     <p class="modal-tip">🍂 <b>יבש:</b> מתיחות וחוסר ברק גם שעות אחרי הניקוי.</p>
     <p class="modal-tip">🌗 <b>מעורב:</b> ברק רק באזור ה-T, לחיים יבשות.</p>
-    <p class="modal-tip">🌸 <b>רגיש:</b> נטייה לאדמומיות וגירוי ממוצרים חדשים.</p>
+    <p class="modal-tip">🌸 <b>עור רגיש?</b> על זה נשאל בשלב הבא: אדמומיות, עקצוץ או אלרגיה.</p>
     <p class="modal-foot"><span data-gv-f="טיפ: נקי פנים, אל תמרחי כלום 30 דקות ואז תסתכלי במראה." data-gv-m="טיפ: נקה פנים, אל תמרח כלום 30 דקות ואז תסתכל במראה." data-gv-n="טיפ: לנקות פנים, לא למרוח כלום 30 דקות, ואז להסתכל במראה.">טיפ: לנקות פנים, לא למרוח כלום 30 דקות, ואז להסתכל במראה.</span></p>
   </div>
 </div>
@@ -1929,10 +1929,9 @@ const SKIN_TYPES = [ {
 }, {
  key: "combination",
  label: "מעורב"
-}, {
- key: "sensitive",
- label: "רגיש"
 } ];
+
+const SKIN_TYPE_KEYS = SKIN_TYPES.map(s => s.key);
 
 const GOALS = [ {
  key: "anti-aging",
@@ -1965,8 +1964,7 @@ const SKIN_LABEL_HE = {
  normal: "רגיל",
  dry: "יבש",
  oily: "שומני",
- combination: "מעורב",
- sensitive: "רגיש"
+ combination: "מעורב"
 };
 
 let selectedSkinType = null, selectedGender = null, userName = "", userEmail = "", userConsent = null;
@@ -2043,12 +2041,6 @@ const GOAL_RULES = {
 const MAINTAIN_RETINOL_FROM_AGE = null;
 
 const SKIN_TYPE_NOTES = {
- sensitive: {
-  swap: {
-   "anti-aging": "Bakuchiol"
-  },
-  note: "בעור רגיש מומלץ להתחיל בתדירות נמוכה מאוד."
- },
  dry: {
   swap: {
    "anti-aging": "Bakuchiol"
@@ -2067,8 +2059,12 @@ const SKIN_TYPE_NOTES = {
 
 async function renderBuildResult() {
  const resultEl = document.getElementById("recommendationResult");
+ if (!selectedSkinType && selectedGoals.size) {
+  resultEl.innerHTML = `<div class="empty-hint">${gv('כדי לבנות את השגרה, בחרי סוג עור בפרופיל (כפתור "עריכה"). את הרגישות של העור שואלים בנפרד.', 'כדי לבנות את השגרה, בחר סוג עור בפרופיל (כפתור "עריכה"). את הרגישות של העור שואלים בנפרד.', 'כדי לבנות את השגרה, צריך לבחור סוג עור בפרופיל (כפתור "עריכה"). את הרגישות של העור שואלים בנפרד.')}</div>`;
+  return;
+ }
  if (!selectedSkinType || !selectedGoals.size) {
-  resultEl.innerHTML = `<div class="empty-hint">ענה/י על שאלון הכניסה כדי שנבנה את השגרה שלך.</div>`;
+  resultEl.innerHTML = `<div class="empty-hint">${gv("עני על שאלון הכניסה כדי שנבנה את השגרה שלך.", "ענה על שאלון הכניסה כדי שנבנה את השגרה שלך.", "אחרי שאלון הכניסה נבנה את השגרה.")}</div>`;
   return;
  }
  resultEl.innerHTML = `<div class="empty-hint"><span class="spinner"></span> בונה את השגרה שלך...</div>`;
@@ -2085,7 +2081,7 @@ async function renderBuildResult() {
    }
   });
  } catch (err) {
-  resultEl.innerHTML = `<div class="empty-hint">לא הצלחנו להגיע למנוע השגרה כרגע. ${gv("נסי לרענן", "נסה לרענן", "אפשר לנסות לרענן")} את הדף.<br><small>${err && err.message || err}</small></div>`;
+  resultEl.innerHTML = `<div class="empty-hint">לא הצלחנו להגיע למנוע השגרה כרגע. ${gv("נסי לרענן", "נסה לרענן", "אפשר לנסות לרענן")} את הדף.<br><small>${escHtml(err && err.message || err)}</small></div>`;
   return;
  }
  await paintRoutine(res, resultEl, "build");
@@ -2130,7 +2126,7 @@ function requestedIngredientNames() {
 async function paintRoutine(res, resultEl, prefix, builtAtLabel) {
  if (!res || res.ok !== true) {
   const e = res && res.error || {};
-  resultEl.innerHTML = `<div class="empty-hint">${e.message || "המנוע החזיר שגיאה."}<br><small>${e.code || ""}</small></div>`;
+  resultEl.innerHTML = `<div class="empty-hint">${gv("לא הצלחנו לבנות את השגרה כרגע. נסי לרענן את הדף.", "לא הצלחנו לבנות את השגרה כרגע. נסה לרענן את הדף.", "לא הצלחנו לבנות את השגרה כרגע. אפשר לנסות לרענן את הדף.")}<br><small>${escHtml(e.code || "")}${DEBUG_MODE && e.message ? " · " + escHtml(e.message) : ""}</small></div>`;
   return;
  }
  const payload = res.data || res.payload || {};
@@ -3375,7 +3371,7 @@ function applyProfile(profile) {
  userEmail = profile.email !== undefined ? profile.email : "";
  selectedGender = profile.gender || null;
  applyVoice();
- selectedSkinType = profile.skinType || null;
+ selectedSkinType = SKIN_TYPE_KEYS.indexOf(profile.skinType) !== -1 ? profile.skinType : null;
  userExperience = profile.experience || null;
  userAge = profile.age || null;
  selectedGoals.clear();
