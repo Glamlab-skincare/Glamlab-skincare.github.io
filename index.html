@@ -1919,7 +1919,7 @@ async function renderOptResult() {
    }
   });
  } catch (err) {
-  resultEl.innerHTML = `<div class="empty-hint">לא הצלחנו להגיע למנוע השגרה כרגע.<br><small>${err && err.message || err}</small></div>`;
+  resultEl.innerHTML = `<div class="empty-hint">לא הצלחנו להגיע למנוע השגרה כרגע. ${gv("נסי לרענן", "נסה לרענן", "אפשר לנסות לרענן")} את הדף.<br><small>${escHtml(err && err.message || err)}</small></div>`;
   return;
  }
  await paintRoutine(res, resultEl, "opt");
