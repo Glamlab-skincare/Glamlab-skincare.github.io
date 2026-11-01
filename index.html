@@ -1879,7 +1879,7 @@ function renderRemovedHTML(payload) {
 function renderHealthNoticesHTML(payload) {
  const n = (payload.healthNotices || []).filter(Boolean);
  if (!n.length) return "";
- return n.map(t => `<div class="split-note">${t}</div>`).join("");
+ return `<div class="mix-health" role="note" style="margin-bottom:1rem">${n.map(t => `<p>⚠️ ${escHtml(t)}</p>`).join("")}</div>`;
 }
 
 function renderServerNotesHTML(payload) {
@@ -2144,9 +2144,8 @@ async function paintRoutine(res, resultEl, prefix, builtAtLabel) {
  const routine = routineFromServer(payload);
  const shown = routine.morning.solo.concat(routine.evening.solo).filter((v, i, a) => a.findIndex(x => x.id === v.id) === i);
  const {html: html, todayAmCount: todayAmCount, todayPmCount: todayPmCount} = renderWeeklyCalendar(routine, prefix);
- let out = html;
+ let out = renderHealthNoticesHTML(payload) + html;
  out += beforeYouStartHTML();
- out += renderHealthNoticesHTML(payload);
  out += renderServerNotesHTML(payload);
  if (shown.length) {
   const plc = placementFromServer(payload), exm = payload.explain || {};
@@ -3473,7 +3472,7 @@ function anyHealthFlag() {
  return anyFlag(HEALTH_OPTIONS, healthAnswers);
 }
 
-function renderExclusiveSelectInto(containerEl, items, target, noneOpt, stepIdx) {
+function renderExclusiveSelectInto(containerEl, items, target, noneOpt, stepIdx, onChange) {
  if (!containerEl) return;
  containerEl.innerHTML = "";
  if (anyFlag(items, target)) target.none = false;
@@ -3481,6 +3480,7 @@ function renderExclusiveSelectInto(containerEl, items, target, noneOpt, stepIdx)
  const sync = () => {
   Object.keys(btns).forEach(k => btns[k].classList.toggle("selected", !!target[k]));
   if (onbCurrentStep === stepIdx) updateStepNext();
+  if (onChange) onChange();
  };
  items.concat([ noneOpt ]).forEach(it => {
   const b = document.createElement("button");
@@ -3507,8 +3507,50 @@ function renderExclusiveSelectInto(containerEl, items, target, noneOpt, stepIdx)
  sync();
 }
 
+const HEALTH_URGENT_TEXT = {
+ pregnant: {
+  f: "סימנת גם טיפול ברואקוטן וגם הריון. לפי NHS, אסור ליטול רואקוטן בהריון, כי הוא עלול לגרום להפלה או לפגיעה חמורה בהתפתחות העובר. חשוב לפנות לרופא/ה המטפל/ת בהקדם.",
+  m: "סימנת גם טיפול ברואקוטן וגם הריון. לפי NHS, אסור ליטול רואקוטן בהריון, כי הוא עלול לגרום להפלה או לפגיעה חמורה בהתפתחות העובר. חשוב לפנות לרופא/ה המטפל/ת בהקדם.",
+  n: "סומנו גם טיפול ברואקוטן וגם הריון. לפי NHS, אסור ליטול רואקוטן בהריון, כי הוא עלול לגרום להפלה או לפגיעה חמורה בהתפתחות העובר. חשוב לפנות לרופא/ה המטפל/ת בהקדם."
+ },
+ breastfeeding: {
+  f: "סימנת גם טיפול ברואקוטן וגם הנקה. לפי NHS, אסור ליטול רואקוטן בזמן הנקה, כי הוא עלול לגרום לתופעות לוואי אצל התינוק. חשוב לספר על כך לרופא/ה המטפל/ת.",
+  m: "סימנת גם טיפול ברואקוטן וגם הנקה. לפי NHS, אסור ליטול רואקוטן בזמן הנקה, כי הוא עלול לגרום לתופעות לוואי אצל התינוק. חשוב לספר על כך לרופא/ה המטפל/ת.",
+  n: "סומנו גם טיפול ברואקוטן וגם הנקה. לפי NHS, אסור ליטול רואקוטן בזמן הנקה, כי הוא עלול לגרום לתופעות לוואי אצל התינוק. חשוב לספר על כך לרופא/ה המטפל/ת."
+ }
+};
+
+function healthUrgentTexts() {
+ if (!healthAnswers.isotretinoin) return [];
+ const t = [];
+ [ "pregnant", "breastfeeding" ].forEach(k => {
+  if (healthAnswers[k]) {
+   const d = HEALTH_URGENT_TEXT[k];
+   t.push(gv(d.f, d.m, d.n));
+  }
+ });
+ return t;
+}
+
+function paintHealthUrgent(el) {
+ if (!el) return;
+ let box = el.nextElementSibling;
+ if (!box || !box.classList.contains("health-urgent")) {
+  box = document.createElement("div");
+  box.className = "mix-health health-urgent";
+  box.setAttribute("role", "alert");
+  box.style.marginTop = "1rem";
+  box.style.textAlign = "right";
+  el.after(box);
+ }
+ const t = healthUrgentTexts();
+ box.innerHTML = t.map(x => `<p>⚠️ ${escHtml(x)}</p>`).join("");
+ box.hidden = !t.length;
+ box.style.display = t.length ? "" : "none";
+}
+
 function renderHealthSelectInto(el) {
- renderExclusiveSelectInto(el, HEALTH_OPTIONS, healthAnswers, HEALTH_NONE, 5);
+ renderExclusiveSelectInto(el, HEALTH_OPTIONS, healthAnswers, HEALTH_NONE, 5, () => paintHealthUrgent(el));
 }
 
 function renderSensSelectInto(el) {
