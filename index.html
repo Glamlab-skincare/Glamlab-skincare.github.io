@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- 08.11.2026 · בדיקת אבטחה: CSP. הדף מדבר רק עם השרתים שלנו (Apps Script, Supabase) ונטען רק מהמקורות האלה.
+     ⚠️ שרת או ספרייה חיצונית חדשה = להוסיף כאן, אחרת הדפדפן יחסום. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://script.google.com https://script.googleusercontent.com https://cfqessiozwysxhkznssj.supabase.co; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <title>GlamLab · שגרת טיפוח אישית</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
