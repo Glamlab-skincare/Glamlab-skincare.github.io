@@ -600,8 +600,15 @@ function apiCallHttp_(envelope, url) {
  });
 }
 
+// build-08 שלב 3 · מודולים שעברו ל-engine-api ב-Supabase. סדר החיבור: catalog ← ask ← routine ← label.
+// ⚠️ רק כשהדף מוגש מכתובת האפליקציה: engine-api מקבל רק אותה (CORS). מ-Apps Script ממשיכים כמו היום,
+//    עד שהגשת Apps Script תיסגר (הכרעה 19.11.2026, אפשרות א).
+var ENGINE_API_MODULES_ = [ "catalog" ];
+var ENGINE_API_ORIGIN_ = "https:" + String.fromCharCode(47, 47) + "glamlab-skincare.github.io";
+
 function apiRouteFor_(module) {
  if (module === "account") return URL_SCHEME + "cfqessiozwysxhkznssj.supabase.co/functions/v1/account-api";
+ if (ENGINE_API_MODULES_.indexOf(module) !== -1 && location.origin === ENGINE_API_ORIGIN_) return URL_SCHEME + "cfqessiozwysxhkznssj.supabase.co/functions/v1/engine-api";
  return null;
 }
 
